@@ -108,7 +108,7 @@ namespace Core.Common.Core
             {
                 var errors = new StringBuilder();
 
-                if (_ValidationErrors != null && _ValidationErrors.Count() > 0)
+                if (_ValidationErrors != null && _ValidationErrors.Any())
                 {
                     foreach (var validationError in _ValidationErrors)
                     {
