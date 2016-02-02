@@ -8,12 +8,13 @@ using System.Reflection;
 using System.Text;
 using Core.Common.Extensions;
 using Core.Common.Utils;
+using Core.Contracts;
 using FluentValidation;
 using FluentValidation.Results;
 
 namespace Core.Common.Core
 {
-    public class ObjectBase : INotifyPropertyChanged, IDataErrorInfo
+    public class ObjectBase : NotificationObject, IDataErrorInfo, IDirtyCapable 
     {
 
         public ObjectBase()
@@ -22,56 +23,47 @@ namespace Core.Common.Core
             Validate();
         }
 
-        
-
-        private event PropertyChangedEventHandler _propertyChanged;
+        protected bool _isDirty = false;
         protected IValidator _Validator = null;
         protected IEnumerable<ValidationFailure> _ValidationErrors = null;
-         
 
-        readonly List<PropertyChangedEventHandler> _propertyChangedSubscribers = new List<PropertyChangedEventHandler>();
+#region ===============================  Property change notification ==================================
 
-        public event PropertyChangedEventHandler PropertyChanged
-        {
-            add
-            {
-                if (!_propertyChangedSubscribers.Contains(value))
-                {
-                    _propertyChanged += value;
-                    _propertyChangedSubscribers.Add(value);
-                }
-            }
-            remove
-            {
-                _propertyChanged -= value;
-                _propertyChangedSubscribers.Remove(value);
-            }
-        }
-
-
-        protected virtual void OnPropertyChanged(string propertyName)
+        protected override void OnPropertyChanged(string propertyName)
         {
             OnPropertyChanged(propertyName, true);
+        }
+
+        protected virtual void OnPropertyChanged<T>(Expression<Func<T>> propertyExpression, bool makeDirty)
+        {
+            var propertyName = PropertySupport.ExtractPropertyName(propertyExpression);
+            OnPropertyChanged(propertyName, makeDirty);
         }
 
         // tell if to change dirty-state of object
         protected virtual void OnPropertyChanged(string propertyName, bool makeDirty)
         {
-            //if(PropertyChanged != null)
-            //    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-
-            _propertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            base.OnPropertyChanged(propertyName);
 
             if (makeDirty)
                 IsDirty = true;
 
             Validate();
         }
+        #endregion  =====================================================================
 
-        protected virtual void OnPropertyChanged<T>(Expression<Func<T>> propertyExpression)
+#region  ============================= Validation =======================================
+
+       
+        protected IValidator GetValidator()
         {
-            var propertyName = PropertySupport.ExtractPropertyName(propertyExpression);
-            OnPropertyChanged(propertyName);
+            return null;
+        }
+        
+        public IEnumerable<ValidationFailure> ValidationErrors
+        {
+            get { return _ValidationErrors; }
+            set { }
         }
 
         public void Validate()
@@ -83,22 +75,14 @@ namespace Core.Common.Core
             }
         }
 
-        protected IValidator GetValidator()
-        {
-            return null;
-        }
 
-        protected bool _isDirty = false;
-
-
-        public IEnumerable<ValidationFailure> ValidationErrors
-        {
-            get { return _ValidationErrors; }
-            set { }
-        }
-
-       // [NotNavigable]
+        [NotNavigable]
         public virtual bool IsValid => _ValidationErrors == null || !_ValidationErrors.Any();
+
+        #endregion ============================================================================
+
+
+#region ==================================== IDataErrorInfo members ===========================
 
         string IDataErrorInfo.Error => string.Empty;
 
@@ -121,15 +105,18 @@ namespace Core.Common.Core
             }
         }
 
-        public bool IsDirty
+        #endregion ====================================================================================
+
+        #region ================================ IDirtyCapable members ==============================
+        public virtual bool IsDirty
         {
             get { return _isDirty; }
             set { _isDirty = value; }
         }
 
-        public List<ObjectBase> GetDirtyObject()
+        public List<IDirtyCapable> GetDirtyObjects()
         {
-            var dirtyObjects = new List<ObjectBase>();
+            var dirtyObjects = new List<IDirtyCapable>();
 
             WalkObjectGraph(o =>
             {
@@ -142,7 +129,7 @@ namespace Core.Common.Core
             return dirtyObjects;
         }
 
-        public void CleanAll()
+        public virtual void CleanAll()
         {
             WalkObjectGraph(o =>
             {
@@ -152,7 +139,7 @@ namespace Core.Common.Core
             }, colln => { });
         }
 
-        public virtual bool IsAnyThingDirty()
+        public virtual bool IsAnythingDirty()
         {
             var isDirty = false;
 
@@ -169,6 +156,10 @@ namespace Core.Common.Core
 
             return isDirty;
         }
+
+        #endregion =====================================================================================
+
+        #region =================================== Protected methods ==================================
 
         protected void WalkObjectGraph(Func<ObjectBase, bool> snippetForObject, Action<IList> snippetForCollection, params string[] exemptProperties)
         {
@@ -193,7 +184,7 @@ namespace Core.Common.Core
                     {
                         var properties = o.GetBrowsableProperties();
 
-                        foreach (PropertyInfo property in properties)
+                        foreach (var property in properties)
                         {
                             if (!exemptions.Contains(property.Name))
                             {
@@ -225,5 +216,8 @@ namespace Core.Common.Core
             walk(this);
 
         }
+
+#endregion ============================================================================================
+
     }
 }

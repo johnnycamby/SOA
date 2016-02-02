@@ -21,7 +21,7 @@ namespace Clients.Entities
                 if (_hiredId != value)
                 {
                     _hiredId = value;
-                    OnPropertyChanged(() => _hiredId);
+                    OnPropertyChanged(() => HiredId);
                 }
             }
             

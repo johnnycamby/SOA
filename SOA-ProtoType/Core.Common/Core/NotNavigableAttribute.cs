@@ -1,6 +1,9 @@
-﻿namespace Core.Common.Core
+﻿using System;
+
+namespace Core.Common.Core
 {
-    public class NotNavigableAttribute
+    [AttributeUsage(AttributeTargets.Property)]
+    public class NotNavigableAttribute :Attribute
     {
          
     }
