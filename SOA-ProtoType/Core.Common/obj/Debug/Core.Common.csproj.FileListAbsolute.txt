@@ -24,3 +24,5 @@ D:\DEV\CSHARP\coreApps\SOA-ProtoType\Core.Common\obj\Debug\Core.Common.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Core.Common\obj\Debug\Core.Common.pdb
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Core.Common\bin\Debug\Core.Contracts.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Core.Common\bin\Debug\Core.Contracts.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Core.Common\bin\Debug\EntityFramework.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Core.Common\bin\Debug\EntityFramework.xml

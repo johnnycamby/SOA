@@ -31,7 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,11 +43,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Contracts\IAccountRepository.cs" />
+    <Compile Include="Contracts\IBookingRepository.cs" />
+    <Compile Include="Contracts\IDeveloperRepository.cs" />
+    <Compile Include="Contracts\IHiredRepository.cs" />
+    <Compile Include="DataRepositoryFactory.cs" />
+    <Compile Include="DTOs\ClientBookingInfo.cs" />
+    <Compile Include="DTOs\ClientHireInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Contracts\" />
-    <Folder Include="DTOs\" />
+    <ProjectReference Include="..\Business.Entities\Business.Entities.csproj">
+      <Project>{D74A7A55-BB48-44C6-A10A-05D5A12581DC}</Project>
+      <Name>Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Common\Core.Common.csproj">
+      <Project>{97c47137-1739-4f9a-93e9-589c80138132}</Project>
+      <Name>Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Contracts\Core.Contracts.csproj">
+      <Project>{D5DB8569-9959-44B6-8EB2-8EF496B435FC}</Project>
+      <Name>Core.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

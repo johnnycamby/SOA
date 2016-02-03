@@ -24,3 +24,7 @@ D:\DEV\CSHARP\coreApps\SOA-ProtoType\Clients.Entities\bin\Debug\tr\FluentValidat
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Clients.Entities\bin\Debug\zh-CN\FluentValidation.resources.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Clients.Entities\obj\Debug\Clients.Entities.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Clients.Entities\obj\Debug\Clients.Entities.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Clients.Entities\bin\Debug\Core.Contracts.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Clients.Entities\bin\Debug\EntityFramework.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Clients.Entities\bin\Debug\Core.Contracts.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Clients.Entities\bin\Debug\EntityFramework.xml

@@ -39,6 +39,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
@@ -50,12 +51,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="XplicitContext.cs" />
+    <Compile Include="DataRepositoryBase.cs" />
+    <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="XplicitDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BookingRepository.cs" />
+    <Compile Include="Repositories\DeveloperRepository.cs" />
+    <Compile Include="Repositories\HiredRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -72,6 +76,10 @@
     <ProjectReference Include="..\Core.Contracts\Core.Contracts.csproj">
       <Project>{d5db8569-9959-44b6-8eb2-8ef496b435fc}</Project>
       <Name>Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer.Contracts\DataLayer.Contracts.csproj">
+      <Project>{DCE9B334-EDBE-4275-9E34-2BEA78661B73}</Project>
+      <Name>DataLayer.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

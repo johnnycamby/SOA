@@ -1,0 +1,6 @@
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Tests\bin\Debug\DataLayer.Tests.exe.config
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Tests\bin\Debug\DataLayer.Tests.exe
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Tests\bin\Debug\DataLayer.Tests.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Tests\obj\Debug\DataLayer.Tests.csprojResolveAssemblyReference.cache
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Tests\obj\Debug\DataLayer.Tests.exe
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Tests\obj\Debug\DataLayer.Tests.pdb

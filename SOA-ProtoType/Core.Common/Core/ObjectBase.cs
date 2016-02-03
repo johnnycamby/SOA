@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -26,6 +27,8 @@ namespace Core.Common.Core
         protected bool _isDirty = false;
         protected IValidator _Validator = null;
         protected IEnumerable<ValidationFailure> _ValidationErrors = null;
+
+        public static CompositionContainer Container { get; set; }
 
 #region ===============================  Property change notification ==================================
 

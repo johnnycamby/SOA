@@ -33,8 +33,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +51,28 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bootstrapper\Bootstrapper.csproj">
+      <Project>{9921ABC0-B3D5-4156-9D53-F7A18A457B5F}</Project>
+      <Name>Bootstrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business.Entities\Business.Entities.csproj">
+      <Project>{D74A7A55-BB48-44C6-A10A-05D5A12581DC}</Project>
+      <Name>Business.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Common\Core.Common.csproj">
+      <Project>{97C47137-1739-4F9A-93E9-589C80138132}</Project>
+      <Name>Core.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Core.Contracts\Core.Contracts.csproj">
+      <Project>{d5db8569-9959-44b6-8eb2-8ef496b435fc}</Project>
+      <Name>Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer.Contracts\DataLayer.Contracts.csproj">
+      <Project>{DCE9B334-EDBE-4275-9E34-2BEA78661B73}</Project>
+      <Name>DataLayer.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
