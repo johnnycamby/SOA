@@ -4,6 +4,9 @@ using System.ComponentModel.Composition.Hosting;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Business.Engine;
+using Business.Engine.Engine;
+using DataLayer.Contracts;
 using DataLayer.Repositories;
 
 namespace Bootstrapper
@@ -17,7 +20,8 @@ namespace Bootstrapper
 
             // build a MEF Catalog
             catalog.Catalogs.Add(new AssemblyCatalog(typeof(AccountRepository).Assembly));
-
+            catalog.Catalogs.Add(new AssemblyCatalog(typeof(DataRepositoryFactory).Assembly));
+            catalog.Catalogs.Add(new AssemblyCatalog(typeof(DeveloperHireEngine).Assembly));
             var container = new CompositionContainer(catalog);
 
             return container;

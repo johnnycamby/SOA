@@ -34,3 +34,7 @@ D:\DEV\CSHARP\coreApps\SOA-ProtoType\Bootstrapper\bin\Debug\zh-CN\FluentValidati
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Bootstrapper\obj\Debug\Bootstrapper.csprojResolveAssemblyReference.cache
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Bootstrapper\obj\Debug\Bootstrapper.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Bootstrapper\obj\Debug\Bootstrapper.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Bootstrapper\bin\Debug\Business.Common.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Bootstrapper\bin\Debug\Business.Engine.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Bootstrapper\bin\Debug\Business.Common.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Bootstrapper\bin\Debug\Business.Engine.pdb

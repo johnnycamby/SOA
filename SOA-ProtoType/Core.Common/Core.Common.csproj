@@ -53,6 +53,7 @@
     <Compile Include="Core\NotNavigableAttribute.cs" />
     <Compile Include="Core\ObjectBase.cs" />
     <Compile Include="Data\DataRepositoryBase.cs" />
+    <Compile Include="Exceptions\NotFoundException.cs" />
     <Compile Include="Extensions\CoreExtensions.cs" />
     <Compile Include="Extensions\DataExtensions.cs" />
     <Compile Include="Properties\Annotations.cs" />

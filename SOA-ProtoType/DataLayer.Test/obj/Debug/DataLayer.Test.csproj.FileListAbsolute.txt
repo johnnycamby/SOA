@@ -42,3 +42,7 @@ D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\EntityFramework.Sq
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\EntityFramework.SqlServer.xml
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Moq.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Moq.xml
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Business.Engine.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Business.Common.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Business.Engine.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Business.Common.pdb

@@ -46,6 +46,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Business.Common\Business.Common.csproj">
+      <Project>{2DCAEA0D-27FD-482E-83A9-5081AA1D7DB9}</Project>
+      <Name>Business.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Business.Engine\Business.Engine.csproj">
+      <Project>{63D7F827-247B-4984-8AE7-2801669CA491}</Project>
+      <Name>Business.Engine</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Core.Common\Core.Common.csproj">
       <Project>{97c47137-1739-4f9a-93e9-589c80138132}</Project>
       <Name>Core.Common</Name>

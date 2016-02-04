@@ -1,13 +1,15 @@
-﻿using Core.Common.Core;
+﻿using System.ComponentModel.Composition;
+using Core.Common.Core;
 using Core.Contracts;
 
 namespace DataLayer.Contracts
 {
+    [Export(typeof(IDataRepositoryFactory))]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     public class DataRepositoryFactory : IDataRepositoryFactory
     {
-        public T GetDataRepository<T>() where T : IDataRepository
+        T IDataRepositoryFactory.GetDataRepository<T>()
         {
-            // Resolve something(T) thru MEF
             return ObjectBase.Container.GetExportedValue<T>();
         }
     }

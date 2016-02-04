@@ -1,8 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.Composition;
+using System.Runtime.Serialization;
 using Bootstrapper;
 using Business.Entities;
 using Core.Common.Core;
+using Core.Contracts;
 using DataLayer.Contracts.Contracts;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
@@ -32,7 +34,42 @@ namespace DataLayer.Test
             var developers = repoTest.GetDevelopers();
             Assert.IsTrue(developers != null);
         }
-        
+
+        [TestMethod]
+        public void test_repository_factory_usage()
+        {
+            var factoryTest = new RepositoryFactoryTestClass();
+            var developers = factoryTest.GetDevelopers();
+            Assert.IsTrue(developers != null);
+        }
+
+        [TestMethod]
+        public void test_repository_factory_mock1()
+        {
+            var mockDataRepository = new Mock<IDataRepositoryFactory>();
+            mockDataRepository.Setup(obj => obj.GetDataRepository<IDeveloperRepository>().Get()).Returns(_developers);
+
+            var factoryTest = new RepositoryFactoryTestClass(mockDataRepository.Object);
+            var result = factoryTest.GetDevelopers();
+
+            Assert.IsTrue(result == _developers);
+        }
+
+        [TestMethod]
+        public void test_repository_factory_mock2()
+        {
+            var mockDevRepo = new Mock<IDeveloperRepository>();
+            mockDevRepo.Setup(obj => obj.Get()).Returns(_developers);
+
+            var mockDataRepository = new Mock<IDataRepositoryFactory>();
+            mockDataRepository.Setup(obj => obj.GetDataRepository<IDeveloperRepository>()).Returns(mockDevRepo.Object);
+
+            var factoryTest = new RepositoryFactoryTestClass(mockDataRepository.Object);
+            var result = factoryTest.GetDevelopers();
+
+            Assert.IsTrue(result == _developers);
+        }
+
         [TestMethod]
         public void test_repository_mocking()
         {
@@ -43,8 +80,9 @@ namespace DataLayer.Test
             var developers = repositoryTest.GetDevelopers();
 
             Assert.IsTrue(developers != null);
-
         }
+
+       
 
     }
 
@@ -70,5 +108,28 @@ namespace DataLayer.Test
             var developers = _developerRepository.Get();
             return developers;
         }
+    }
+
+    public class RepositoryFactoryTestClass
+    {
+        public RepositoryFactoryTestClass()
+        {
+            ObjectBase.Container.SatisfyImportsOnce(this);
+        }
+        public RepositoryFactoryTestClass(IDataRepositoryFactory dataRepositoryFactory)
+        {
+            _dataRepositoryFactory = dataRepositoryFactory;
+        }
+
+        [Import]
+        private IDataRepositoryFactory _dataRepositoryFactory;
+        
+        public IEnumerable<Developer> GetDevelopers()
+        {
+            var developerRepo = _dataRepositoryFactory.GetDataRepository<IDeveloperRepository>();
+            var developers = developerRepo.Get();
+             return developers;
+        }
+
     }
 }
