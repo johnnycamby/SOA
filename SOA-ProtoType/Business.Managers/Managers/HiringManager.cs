@@ -15,7 +15,7 @@ using DataLayer.Contracts.Contracts;
 
 namespace Business.Managers.Managers
 {
-    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Multiple)]
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerCall, ConcurrencyMode = ConcurrencyMode.Multiple, ReleaseServiceInstanceOnTransactionComplete = false)]
     public class HiringManager : ManagerBase, IHiringService
     {
 

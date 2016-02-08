@@ -16,6 +16,7 @@ namespace Business.Contracts.ServiceContracts
         [FaultContract(typeof(AuthorizationValidationException))]
         IEnumerable<Hired> GetHiringHistory(string loginEmail);
 
+        [OperationContract(Name = "HireDeveloperToClientImmediately")]
         [TransactionFlow(TransactionFlowOption.Allowed)]
         [FaultContract(typeof(NotFoundException))]
         [FaultContract(typeof(DeveloperCurrentlyHiredException))]

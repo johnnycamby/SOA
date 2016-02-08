@@ -47,6 +47,8 @@
     <Compile Include="IDataRepositoryFactory.cs" />
     <Compile Include="IIdentifiableEntity.cs" />
     <Compile Include="IDirtyCapable.cs" />
+    <Compile Include="IServiceContract.cs" />
+    <Compile Include="IServiceFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

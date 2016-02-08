@@ -16,7 +16,7 @@ namespace BusinessManager.Tests
         [TestInitialize]
         public void Initialize()
         {
-            var principal = new GenericPrincipal(new GenericIdentity("Johnny"), new string[] {"Administrators"} );
+            var principal = new GenericPrincipal(new GenericIdentity("XPLICIT/johnny"), new string[] {"Administrators"} );
             Thread.CurrentPrincipal = principal;
         }
         [TestMethod]
