@@ -5,7 +5,7 @@ namespace Business.Engine
 {
     public class BusinessEngineFactory : IBusinessEngineFactory
     {
-        public T GetDataRepository<T>() where T : IBusinessEngine
+        public T GetBusinessEngine<T>() where T : IBusinessEngine
         {
             return ObjectBase.Container.GetExportedValue<T>();
         }

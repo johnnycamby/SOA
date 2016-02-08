@@ -30,3 +30,5 @@ D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Contracts\bin\Debug\zh-CN\FluentVa
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Contracts\obj\Debug\Business.Contracts.csprojResolveAssemblyReference.cache
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Contracts\obj\Debug\Business.Contracts.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Contracts\obj\Debug\Business.Contracts.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Contracts\bin\Debug\App.Common.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Contracts\bin\Debug\App.Common.pdb

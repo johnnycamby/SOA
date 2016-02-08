@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
+using System.Security.Permissions;
 using System.ServiceModel;
+using App.Common;
 using Business.Common;
 using Business.Contracts.ServiceContracts;
 using Business.Entities;
@@ -45,6 +47,8 @@ namespace Business.Managers.Managers
 
         [Import] private IBusinessEngineFactory _businessEngineFactory;
 
+        [PrincipalPermission(SecurityAction.Demand, Role = Security.AppAdmin)]
+        [PrincipalPermission(SecurityAction.Demand, Name = Security.AppUser)]
         public Developer GetDeveloper(int developerId)
         {
 
@@ -69,12 +73,14 @@ namespace Business.Managers.Managers
             });
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = Security.AppAdmin)]
+        [PrincipalPermission(SecurityAction.Demand, Name = Security.AppUser)]
         public Developer[] GetAllDevelopers()
         {
             return ExecuteFaultHandledOperation(() => {
 
                 var developerRepository = _dataRepositoryFactory.GetDataRepository<IDeveloperRepository>();
-                var hiredRepository = _dataRepositoryFactory.GetDataRepository<IHiredRepository>();
+                var hiredRepository = _dataRepositoryFactory.GetDataRepository<IHiringRepository>();
                 var developers = developerRepository.Get();
                 var hiredDevelopers = hiredRepository.GetCurrentlyHiredDevelopers();
 
@@ -89,8 +95,9 @@ namespace Business.Managers.Managers
             });
                 
         }
-
+        
         [OperationBehavior(TransactionScopeRequired = true)]
+        [PrincipalPermission(SecurityAction.Demand, Role = Security.AppAdmin)]
         public Developer UpdateDeveloper(Developer developer)
         {
             return ExecuteFaultHandledOperation(() =>
@@ -106,6 +113,7 @@ namespace Business.Managers.Managers
         }
 
         [OperationBehavior(TransactionScopeRequired = true)]
+        [PrincipalPermission(SecurityAction.Demand, Role = Security.AppAdmin)]
         public void DeleteDeveloper(int developerId)
         {
             ExecuteFaultHandledOperation(() =>
@@ -117,15 +125,17 @@ namespace Business.Managers.Managers
             });
         }
 
+        [PrincipalPermission(SecurityAction.Demand, Role = Security.AppAdmin)]
+        [PrincipalPermission(SecurityAction.Demand, Name = Security.AppUser)]
         public Developer[] GetAvailableDevelopers(DateTime startDate, DateTime enDate)
         {
             return ExecuteFaultHandledOperation(() =>
             {
                 var developerRepository = _dataRepositoryFactory.GetDataRepository<IDeveloperRepository>();
-                var hiredRepository = _dataRepositoryFactory.GetDataRepository<IHiredRepository>();
+                var hiredRepository = _dataRepositoryFactory.GetDataRepository<IHiringRepository>();
                 var bookingRepository = _dataRepositoryFactory.GetDataRepository<IBookingRepository>();
 
-                var developerHiredEngine = _businessEngineFactory.GetDataRepository<IDeveloperHireEngine>();
+                var developerHiredEngine = _businessEngineFactory.GetBusinessEngine<IDeveloperHiringEngine>();
 
                 var developers = developerRepository.Get();
                 var hiredDeveloper = hiredRepository.GetCurrentlyHiredDevelopers();

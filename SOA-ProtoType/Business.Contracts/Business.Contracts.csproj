@@ -42,13 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContracts\ClientBookingData.cs" />
+    <Compile Include="DataContracts\ClientHiringData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceContracts\IAccountService.cs" />
+    <Compile Include="ServiceContracts\IHiringService.cs" />
     <Compile Include="ServiceContracts\IInventoryService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="DataContracts\" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\App.Common\App.Common.csproj">
+      <Project>{E6BAFE77-55F9-443A-9AA1-338F02177150}</Project>
+      <Name>App.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Business.Entities\Business.Entities.csproj">
       <Project>{D74A7A55-BB48-44C6-A10A-05D5A12581DC}</Project>
       <Name>Business.Entities</Name>

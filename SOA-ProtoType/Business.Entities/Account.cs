@@ -5,7 +5,7 @@ using Core.Contracts;
 namespace Business.Entities
 {
     [DataContract]
-    public class Account : EntityBase,IIdentifiableEntity
+    public class Account : EntityBase,IIdentifiableEntity, IAccountOwnedEntity
     {
         [DataMember]
         public int AccountId { get; set; }
@@ -34,5 +34,7 @@ namespace Business.Entities
             get { return AccountId; }
             set { AccountId = value; }
         }
+
+        public int OwnerAccountId => AccountId;
     }
 }

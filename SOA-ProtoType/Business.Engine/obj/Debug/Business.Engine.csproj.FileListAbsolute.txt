@@ -32,3 +32,7 @@ D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Engine\bin\Debug\zh-CN\FluentValid
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Engine\obj\Debug\Business.Engine.csprojResolveAssemblyReference.cache
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Engine\obj\Debug\Business.Engine.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Engine\obj\Debug\Business.Engine.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Engine\bin\Debug\App.Common.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Engine\bin\Debug\DataLayer.Contracts.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Engine\bin\Debug\App.Common.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Engine\bin\Debug\DataLayer.Contracts.pdb

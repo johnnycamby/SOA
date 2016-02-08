@@ -36,3 +36,5 @@ D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Managers\obj\Debug\Business.Manage
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Managers\obj\Debug\Business.Managers.pdb
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Managers\bin\Debug\Business.Common.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Managers\bin\Debug\Business.Common.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Managers\bin\Debug\App.Common.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\Business.Managers\bin\Debug\App.Common.pdb

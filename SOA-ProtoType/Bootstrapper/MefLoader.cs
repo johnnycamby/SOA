@@ -21,7 +21,7 @@ namespace Bootstrapper
             // build a MEF Catalog
             catalog.Catalogs.Add(new AssemblyCatalog(typeof(AccountRepository).Assembly));
             catalog.Catalogs.Add(new AssemblyCatalog(typeof(DataRepositoryFactory).Assembly));
-            catalog.Catalogs.Add(new AssemblyCatalog(typeof(DeveloperHireEngine).Assembly));
+            catalog.Catalogs.Add(new AssemblyCatalog(typeof(DeveloperHiringEngine).Assembly));
             var container = new CompositionContainer(catalog);
 
             return container;

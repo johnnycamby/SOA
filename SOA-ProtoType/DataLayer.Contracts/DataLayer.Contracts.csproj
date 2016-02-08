@@ -45,7 +45,7 @@
     <Compile Include="Contracts\IAccountRepository.cs" />
     <Compile Include="Contracts\IBookingRepository.cs" />
     <Compile Include="Contracts\IDeveloperRepository.cs" />
-    <Compile Include="Contracts\IHiredRepository.cs" />
+    <Compile Include="Contracts\IHiringRepository.cs" />
     <Compile Include="DataRepositoryFactory.cs" />
     <Compile Include="DTOs\ClientBookingInfo.cs" />
     <Compile Include="DTOs\ClientHireInfo.cs" />

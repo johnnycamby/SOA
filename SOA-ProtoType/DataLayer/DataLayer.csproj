@@ -57,7 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BookingRepository.cs" />
     <Compile Include="Repositories\DeveloperRepository.cs" />
-    <Compile Include="Repositories\HiredRepository.cs" />
+    <Compile Include="Repositories\HiringRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

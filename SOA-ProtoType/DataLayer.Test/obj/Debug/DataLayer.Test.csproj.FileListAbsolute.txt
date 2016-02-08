@@ -46,3 +46,5 @@ D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Business.Engine.dl
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Business.Common.dll
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Business.Engine.pdb
 D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\Business.Common.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\App.Common.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\DataLayer.Test\bin\Debug\App.Common.pdb

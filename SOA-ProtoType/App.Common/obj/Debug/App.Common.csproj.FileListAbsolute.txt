@@ -1,0 +1,5 @@
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\App.Common\bin\Debug\App.Common.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\App.Common\bin\Debug\App.Common.pdb
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\App.Common\obj\Debug\App.Common.csprojResolveAssemblyReference.cache
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\App.Common\obj\Debug\App.Common.dll
+D:\DEV\CSHARP\coreApps\SOA-ProtoType\App.Common\obj\Debug\App.Common.pdb

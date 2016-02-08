@@ -43,10 +43,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessEngineFactory.cs" />
-    <Compile Include="Engine\DeveloperHireEngine.cs" />
+    <Compile Include="Engine\DeveloperHiringEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\App.Common\App.Common.csproj">
+      <Project>{E6BAFE77-55F9-443A-9AA1-338F02177150}</Project>
+      <Name>App.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Business.Common\Business.Common.csproj">
       <Project>{2DCAEA0D-27FD-482E-83A9-5081AA1D7DB9}</Project>
       <Name>Business.Common</Name>
@@ -62,6 +66,10 @@
     <ProjectReference Include="..\Core.Contracts\Core.Contracts.csproj">
       <Project>{d5db8569-9959-44b6-8eb2-8ef496b435fc}</Project>
       <Name>Core.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer.Contracts\DataLayer.Contracts.csproj">
+      <Project>{DCE9B334-EDBE-4275-9E34-2BEA78661B73}</Project>
+      <Name>DataLayer.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
