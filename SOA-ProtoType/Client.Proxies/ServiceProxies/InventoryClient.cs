@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.Composition;
+using System.Linq;
 using System.ServiceModel;
 using System.Threading;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace Client.Proxies.ServiceProxies
     public class InventoryClient : UserClientBase<IInventoryService>, IInventoryService
     {
 
-        public Developer GetDeveloper(int developerId)
+        public Developer GetDeveloper(Guid developerId)
         {
             return Channel.GetDeveloper(developerId);
         }
@@ -24,19 +25,35 @@ namespace Client.Proxies.ServiceProxies
             return Channel.GetAllDevelopers();
         }
 
+        public IQueryable<Developer> GetAllDevelopers(string ownerId)
+        {
+            return Channel.GetAllDevelopers(ownerId);
+        }
+
+
         public Developer UpdateDeveloper(Developer developer)
         {
             return Channel.UpdateDeveloper(developer);
         }
 
-        public void DeleteDeveloper(int developerId)
+        public void DeleteDeveloper(Guid developerId)
         {
             Channel.DeleteDeveloper(developerId);
+        }
+
+        public void DeleteDeveloper(string ownerId,Guid developerId)
+        {
+             Channel.DeleteDeveloper(ownerId, developerId) ;
         }
 
         public Developer[] GetAvailableDevelopers(DateTime startDate, DateTime endDate)
         {
             return Channel.GetAvailableDevelopers(startDate, endDate);
+        }
+
+        public Developer AddDeveloper(Developer developer, string ownerId)
+        {
+            return Channel.AddDeveloper(developer, ownerId);
         }
 
         public Task<Developer> UpdateDeveloperAsync(Developer developer)
@@ -49,7 +66,7 @@ namespace Client.Proxies.ServiceProxies
             return Channel.GetAvailableDevelopersAsync(startDate, endDate);
         }
 
-        public Task DeleteDeveloperAsync(int developerId)
+        public Task DeleteDeveloperAsync(Guid developerId)
         {
             return Channel.DeleteDeveloperAsync(developerId);
         }
@@ -59,9 +76,24 @@ namespace Client.Proxies.ServiceProxies
             return Channel.GetAllDevelopersAsync();
         }
 
-        public Task<Developer> GetDeveloperAsync(int developerId)
+        public Task<Developer> GetDeveloperAsync(Guid developerId)
         {
             return Channel.GetDeveloperAsync(developerId);
+        }
+
+        public Task DeleteDeveloperAsync(string ownerId, Guid developerId )
+        {
+           return  Channel.DeleteDeveloperAsync(ownerId, developerId);
+        }
+
+        public Task<Developer> AddDeveloperAsync(Developer developer, string ownerId)
+        {
+            return Channel.AddDeveloperAsync(developer, ownerId);
+        }
+
+        public Task<IQueryable<Developer>> GetAllDevelopersAsync(string ownerId)
+        {
+            return Channel.GetAllDevelopersAsync(ownerId);
         }
     }
 }

@@ -62,6 +62,10 @@
       <Project>{97C47137-1739-4F9A-93E9-589C80138132}</Project>
       <Name>Core.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Core.Contracts\Core.Contracts.csproj">
+      <Project>{D5DB8569-9959-44B6-8EB2-8EF496B435FC}</Project>
+      <Name>Core.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
